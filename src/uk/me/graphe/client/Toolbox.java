@@ -2,6 +2,7 @@ package uk.me.graphe.client;
 
 import java.util.List;
 
+import uk.me.graphe.client.dialogs.HelpDialog;
 import uk.me.graphe.shared.Edge;
 import uk.me.graphe.shared.Tools;
 import uk.me.graphe.shared.Vertex;
@@ -151,7 +152,10 @@ public class Toolbox extends Composite {
 					parent.selectedVertices.add(vd);
 				}
 				if(parent.spDjikstra.hasFinished()){
-					//TODO: bring up dialog
+					HelpDialog result = new HelpDialog(this.parent);
+					result.center();
+					result.setGlassEnabled(true);
+					result.show("Djikstra's shortest path is: " + parent.spDjikstra.getResult());
 				}
 				break;
 			case stepAll:
@@ -170,7 +174,10 @@ public class Toolbox extends Composite {
 					vd1.setHilighted(true);
 					parent.selectedVertices.add(vd1);
 				}
-				//TODO: bring up dialog
+				HelpDialog result = new HelpDialog(this.parent);
+				result.center();
+				result.setGlassEnabled(true);
+				result.show("Djikstra's shortest path is: " + parent.spDjikstra.getResult());
 				break;
 			case styleProcess:
 				parent.setSelectedSyle(VertexDrawable.STROKED_SQUARE_STYLE,

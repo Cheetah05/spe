@@ -27,7 +27,7 @@ public class ShortestPathDjikstras implements Algorithm {
     }
 
     @Override
-    public String getResult() throws Exception {
+    public String getResult() {
         return mDjikstra.getResult();
     }
 

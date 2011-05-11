@@ -73,7 +73,7 @@ public class Djikstra {
             dijkstra();
     }
     
-    public String getResult() throws Exception {
+    public String getResult() {
         // Print shortest path
         if (mFinished == true) {
             if (nlookup.get(dest).getDistance() != Integer.MAX_VALUE)
@@ -82,7 +82,7 @@ public class Djikstra {
                 return "No path exists";
         }
         else
-            throw new Exception("Algorithm not done executing");
+            return "Algorithm not done executing";
     }
     
     public List<Edge> getProcessedEdges() {

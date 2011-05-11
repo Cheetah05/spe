@@ -45,7 +45,7 @@ public class HelpDialog extends PopupPanel
 	
 	public void show (String message)
 	{
-		if (parent.isHelpEnabled)
+		if (parent.isHelpEnabled || message.contains(":"))
 		{
 			if (super.isVisible()) super.hide();
 			
